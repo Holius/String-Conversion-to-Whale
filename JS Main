@@ -1,0 +1,28 @@
+input = ['empire'];
+
+let indiv = [];
+const iterateOver = () => {
+for (let i = 0; i<input.length;i++)  { for
+  (let j = 0; j<input[i].length;j++) {
+  indiv.push(input[i][j]);  
+    }
+  };
+};
+ 
+const convertEnglish = () => {
+for (let i = 0; i<indiv.length;i++) 
+{
+  /[A-G]/ig.test(indiv[i]) ? indiv[i] = 'a'  
+  : /[H-I]/ig.test(indiv[i]) ? indiv[i] = 'ee'
+  : /[O-T]/ig.test(indiv[i]) ? indiv[i] = 'uu'
+  : indiv[i] = 'i';
+        };
+};
+
+const englishToWhale = () => {
+  iterateOver();
+  convertEnglish();
+  return indiv.join("").toUpperCase(); 
+};
+  
+console.log(englishToWhale());
